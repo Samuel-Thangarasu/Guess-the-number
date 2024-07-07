@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GUESS THE NUMBER</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>GUESS THE NUMBER</h1>
+        <input id="guessnumber" placeholder="Enter your number here">
+        <button onclick="check()">SUBMIT</button>
+        <p id="para" >You are wrong (or) Right</p>
+        <p id="score">Score:10</p>
+        
+        <script >
+                var guessnumber=document.getElementById("guessnumber")
+                var para=document.getElementById("para")
+                var score=document.getElementById("score")
+                var randomNumber=Math.floor(Math.random()*10)+1
+                var totalscore=10
+                function check()
+                {
+                    var enterednumber=guessnumber.value
+                    if(randomNumber==enterednumber)
+                {
+                    console.log("your are right")
+                    para.textContent="You're Right"
+                    alert("You Won")
+                }
+                else{
+                    totalscore=totalscore-1
+                    score.textContent="score:"+totalscore 
+                    para.textContent="OOPS You're Wrong"
+                }
+                }
+        </script>
+    </body>
+</html>
